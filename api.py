@@ -13,7 +13,8 @@ def home():
 
 @app.route("/api/discover", methods=["GET"])
 def discover_devices():
-    return jsonify(DiscoverDevices())
+    print(f"request recieved")
+    return jsonify(devices=DiscoverDevices())
 
 
-app.run()
+app.run(ssl_context=("example.crt", "example.key"))
